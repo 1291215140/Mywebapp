@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 作用域 例如两个不同mapper下相同id 可以作用域.id-->
+<!--namespace 用来定义命名空间，该命名空间和定义mapper接口的全限定名一致而且路径也要一致。-->
+<mapper namespace="com.ceshi.BlogMapper">
+    <!--id必须和mapper接口定义的方法相同-->
+    <select id="selectuser" resultType="myclass.user">
+        select password from  user.user
+        <where>
+            <if test = "user!=null">
+               and  user = #{user}
+            </if>
+        </where>
+    </select>
+    <select id="selectall" resultType="myclass.user">
+        select * from  user.user
+    </select>
+    <select id="insertuser" resultType="myclass.user">
+        INSERT INTO user.user VALUES (#{user},#{password},#{uid})
+    </select>
+    <!--mybaties学习至此结束剩下的都是sql学习了-->
+</mapper>

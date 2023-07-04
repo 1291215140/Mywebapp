@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--开启mybaties自带日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED" >
+                <!--mysql驱动-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!--jdbc:mysql://rm-cn-uqm386oy5000guvo.rwlb.rds.aliyuncs.com:3306/data?characterEncoding=utf8 -->
+                <property name="url" value="jdbc:mysql://rm-cn-uqm386oy5000guvo.rwlb.rds.aliyuncs.com:3306?characterEncoding=utf8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="ailiying1314@"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="BlogMapper.xml"/>
+    </mappers>
+</configuration>
