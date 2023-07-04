@@ -14,7 +14,7 @@
 <body>
 <%
     String ss= null;
-    String user = request.getParameter("user");
+    String user = request.getParameter("username");
     String password = request.getParameter("password");
     if(user==null|| user == "" || password==null||password=="")
     {

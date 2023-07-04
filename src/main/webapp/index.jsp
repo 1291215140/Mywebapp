@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-    String user = request.getParameter("user");
+    String user = request.getParameter("username");
 %>
 <h1>
     欢迎您<%=user%>
