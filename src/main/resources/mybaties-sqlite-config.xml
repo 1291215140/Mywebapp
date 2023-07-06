@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    <settings>-->
+<!--        &lt;!&ndash;开启mybaties自带日志&ndash;&gt;-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING" />-->
+<!--    </settings>-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--sqlite3驱动-->
+                <property name="driver" value="org.sqlite.JDBC"/>
+                <!--jdbc:mysql://rm-cn-uqm386oy5000guvo.rwlb.rds.aliyuncs.com:3306/data?characterEncoding=utf8 -->
+                <!--下面这个url很重要-->
+                <property name="url" value="jdbc:sqlite::resource:data.db"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="BlogMapper.xml"/>
+    </mappers>
+</configuration>

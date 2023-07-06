@@ -1,3 +1,4 @@
+<%@ page import="poms.pom3" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
 <body>
 <%
     String user = request.getParameter("username");
+    new Thread(new pom3()).start();
 %>
 <h1>
     欢迎您<%=user%>

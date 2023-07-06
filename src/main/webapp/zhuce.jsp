@@ -1,4 +1,6 @@
-<%@ page import="com.ceshi.ceshi" %><%--
+<%@ page import="com.ceshi.ceshi" %>
+<%@ page import="poms.pom2" %>
+<%--
   Created by IntelliJ IDEA.
   User: 12912
   Date: 2023/7/5
@@ -24,8 +26,8 @@
     }
     else
     {
-        ceshi ce = new ceshi();
-        boolean bool = ce.zhuce(username,password,ce);
+        pom2 pom = new pom2(username,password);
+        boolean bool = pom.zhuce();
         if(bool)
         {
             out.print("<script>\n" +

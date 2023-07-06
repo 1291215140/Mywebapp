@@ -13,7 +13,6 @@
 </head>
 <body>
 <%
-    String ss= null;
     String user = request.getParameter("username");
     String password = request.getParameter("password");
     if(user==null|| user == "" || password==null||password=="")
@@ -24,7 +23,7 @@
                 "</script>");
     }
     ceshi c = new ceshi();
-    boolean bool = c.denglu(user,password,c);
+    boolean bool = c.panduan(user,password);
     if(bool)
     {
         request.getRequestDispatcher("index.jsp").forward(request,response);
